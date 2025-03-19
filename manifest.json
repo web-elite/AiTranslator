@@ -1,0 +1,14 @@
+{
+  "name": "مترجم بیسکو | BiscoTranslate",
+  "theme_color": "#4460ff",
+  "background_color": "#000315",
+  "short_name": "BiscoTranslate",
+  "id": "webelitee",
+  "description": "ترجمه روان متن، عکس با تمام زبان های دنیا توسط هوش مصنوعی",
+  "display_override": [
+    "browser",
+    "fullscreen",
+    "standalone",
+    "window-controls-overlay"
+  ]
+}

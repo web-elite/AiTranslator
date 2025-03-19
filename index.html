@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="winter">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ترجمه روان - مترجم بیسکو</title>
+
+    <!-- Style CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <!-- Meta tags -->
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="ترجمه آنلاین روان روون ترجمه قابل فهم مترجم بیسکو ترجمه هوش مصنوعی جمینای gemini translate">
+    <meta name="description" content="ترجمه آنلاین و روان متون به هر زبانی به صورت کامل روان و قابل فهم">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon.png">
+
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Fonts and Icon -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!-- jQuery -->
+    <script src="/assets/js/jquery.min.js"></script>
+</head>
+
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <img src="/assets/img/main.png" alt="مترجم بیسکو Logo" class="h-10 w-10">
+                <h1 class="text-2xl font-bold text-blue-600">مترجم بیسکو</h1>
+            </div>
+            <nav class="hidden md:flex space-x-4">
+                <a href="https://biscoweb.com" target="_blank" class="text-gray-700 hover:text-blue-600">بازدید از بیسکووب</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-8 flex items-center justify-center">
+        <div class="w-full max-w-4xl bg-white shadow-xl rounded-xl overflow-hidden">
+            <form id="translateForm">
+                <div class="grid md:grid-cols-2 gap-6 p-6">
+
+                    <!-- Source Language Section -->
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <select class="select select-bordered w-full max-w-xs" disabled>
+                                <option value="" selected>شناسایی خودکار</option>
+                            </select>
+                            <a href="javascript:void(0)" class="btn btn-ghost btn-circle" id="clearSource">
+                                <i class="fas fa-trash text-red-500 "></i>
+                            </a>
+                            <a href="javascript:void(0)" class="btn btn-ghost btn-circle" id="speakText">
+                                <i class="fas fa-volume-up text-blue-500"></i>
+                            </a>
+                        </div>
+                        <textarea id="sourceText" name="source_text" class="textarea textarea-bordered w-full h-48 resize-none" placeholder="متنی که می‌خواهید ترجمه کنید را قرار دهید."></textarea>
+                    </div>
+
+                    <!-- Target Language Section -->
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <select class="select select-bordered w-full max-w-xs" id="langTarget">
+                            </select>
+                            <a href="javascript:void(0)" id="copyButton" class="btn btn-ghost btn-circle">
+                                <i class="fas fa-copy text-blue-500"></i>
+                            </a>
+                        </div>
+                        <textarea id="targetText" class="textarea textarea-bordered w-full h-48 resize-none" placeholder="متن ترجمه شده در اینجا قرار خواهد گرفت..." readonly></textarea>
+                    </div>
+
+                </div>
+
+                <!-- Translate Button -->
+                <div class="flex justify-center pb-6">
+                    <button class="btn btn-primary btn-wide" type="submit" id="translate">
+                        <i class="fas fa-language mr-2"></i>
+                        ترجمه
+                    </button>
+                </div>
+            </form>
+            <!-- Toast for Copy Feedback -->
+            <div id="copyToast" class="toast toast-top toast-center z-50">
+                <!-- Toast will be dynamically added here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white shadow-md mt-8">
+        <div class="container mx-auto px-4 py-6 text-center">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-gray-600 mb-4 md:mb-0">
+                    © تمامی حقوق برای مترجم بیسکو محفوظ است.
+                </div>
+                <!-- <div class="flex space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-blue-600">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div> -->
+            </div>
+        </div>
+    </footer>
+    <script src="/assets/js/scripts.js"></script>
+</body>
+
+</html>

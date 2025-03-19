@@ -1,0 +1,16 @@
+{
+    "name": "webelitee/biscotranslate",
+    "description": "Translate Any Content To Any Content with natural and fluent way",
+    "type": "project",
+    "require": {
+      "php": "^8.0",
+      "guzzlehttp/guzzle": "^7.0",
+      "monolog/monolog": "^2.0",
+      "vlucas/phpdotenv": "^5.0"
+    },
+    "autoload": {
+      "psr-4": {
+        "Src\\": "src/"
+      }
+    }
+  }
